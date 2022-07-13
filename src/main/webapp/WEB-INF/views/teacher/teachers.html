@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Teachers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Update</th>
+        <th scope="col">Dalete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="teacher:${teachers}">
+        <th scope="row" th:text="${teacher.id}"></th>
+        <td th:text="${teacher.firstName}"></td>
+        <td th:text="${teacher.lastName}"></td>
+        <td th:text="${teacher.email}"></td>
+
+        <td><a th:href="@{/teachers/updateTeachers}"
+               onclick="return confirm('Are you sure you want to delete this teacher?');">
+            <button style="height: 40px; width: 80px; background-color:red;">update</button>
+        </a></td>
+    </tr>
+    </tbody>
+</table>
+<input style=" display: block; margin:auto; font-size:30px;" type="button" value="Add Teacher"
+       onclick="window.location.href = 'teachers/addTeacher'">
+
+
+
+</body>
+</html>

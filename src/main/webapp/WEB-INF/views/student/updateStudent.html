@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateStudent</title>
+</head>
+<body>
+<form th:action="@{updateSaveStudent}"
+      th:object="${student}"
+      method="patch"
+      style="text-align:center; margin-top:200px; font-size: 30px;">
+    <input type="hidden" name = "id" th:field="${student.id}">
+    <input type="text"  name="Group Name" th:field="${student.studentName}" placeholder="Student Name">
+    <input type="text"  name="dateOfCreate" th:field="${student.dateOfCreate}" placeholder="Date Of Create">
+    <br><br>
+    <input type="text"  name="dateOfFinish" th:field="${student.dateOfFinish}" placeholder="Date Of Finish">
+    <br><br>
+
+    <input type="submit" value="Add">
+
+</form>
+
+
+</body>
+</html>

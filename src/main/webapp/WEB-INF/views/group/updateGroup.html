@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateGroup</title>
+</head>
+<body>
+<form th:action="@{updateSaveGroup}"
+      th:object="${group}"
+      method="patch"
+      style="text-align:center; margin-top:200px; font-size: 30px;">
+    <input type="hidden" name = "id" th:field="${group.id}">
+    <input type="text"  name="Group Name" th:field="${group.groupName}" placeholder="Group Name">
+    <input type="text"  name="dateOfCreate" th:field="${group.dateOfCreate}" placeholder="Date Of Create">
+    <br><br>
+    <input type="text"  name="dateOfFinish" th:field="${group.dateOfFinish}" placeholder="Date Of Finish">
+    <br><br>
+
+    <input type="submit" value="Add">
+
+</form>
+</body>
+</html>

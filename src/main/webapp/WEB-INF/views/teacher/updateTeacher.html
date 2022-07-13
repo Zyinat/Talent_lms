@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateTeacher</title>
+</head>
+<body>
+<form th:action="@{updateSaveTeacher}"
+      th:object="${teacher}"
+      method="patch"
+      style="text-align:center; margin-top:200px; font-size: 30px;">
+    <input type="hidden" name = "id" th:field="${teacher.id}">
+    <input type="text"  name="Group Name" th:field="${teacher.groupName}" placeholder="Teacher Name">
+    <input type="text"  name="dateOfCreate" th:field="${teacher.dateOfCreate}" placeholder="Date Of Create">
+    <br><br>
+    <input type="text"  name="dateOfFinish" th:field="${teacher.dateOfFinish}" placeholder="Date Of Finish">
+    <br><br>
+
+    <input type="submit" value="Add">
+
+</form>
+
+</body>
+</html>
